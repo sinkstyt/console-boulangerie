@@ -1,5 +1,4 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Collections.Generic;
 using BakerySales.Models;
 using System;
 
@@ -148,6 +147,7 @@ namespace BakerySales.Tests
       int countOfSecond = 32;
       int discountCountThreshold = 3;
       int discountReducer = 1;
+      int undiscountedTotal = Pastry.CalcPricePastries();
       Pastry newTreat = new Pastry(crustyCake, countOfType, crunchyPrice);
       Pastry yumTreat = new Pastry(creamyTriangle, countOfSecond, crunchyPrice);
 

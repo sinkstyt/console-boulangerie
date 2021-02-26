@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System;
 
 namespace BakerySales.Models
 {
@@ -44,7 +45,19 @@ namespace BakerySales.Models
 
     public static int CalcAdjPricePastries(int countForDiscount, int discount)
     {
-      int adjustedTotal = 0;
+      int adjustedTotal = Pastry.CalcPricePastries();
+      Console.WriteLine("adjustedTotal before if is {0}", adjustedTotal);
+      int totalPastryNum = Pastry.AllPastryInstancesCount();
+      if (totalPastryNum >= 3)
+      {
+        decimal validForDiscount = Math.Floor(Convert.ToDecimal(totalPastryNum / countForDiscount));
+        Console.WriteLine("validForDiscount value is {0}", validForDiscount);
+        decimal amountToDiscount = Convert.ToDecimal(validForDiscount * discount);
+        Console.WriteLine("amountToDiscount value is {0}", amountToDiscount);
+        adjustedTotal -= Convert.ToInt32(amountToDiscount);
+      } else {
+        adjustedTotal = Pastry.CalcPricePastries();
+      }
       return adjustedTotal;
     }
 
