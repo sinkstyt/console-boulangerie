@@ -25,6 +25,10 @@ namespace BakerySales.Models
     public static int AllPastryInstancesCount()
     {
       int countOfAllTypes = 0;
+      foreach(Pastry pastry in _allPastries)
+      {
+        countOfAllTypes += pastry.Count;
+      }
       return countOfAllTypes;
     }
 
@@ -34,3 +38,9 @@ namespace BakerySales.Models
     }
   }
 }
+
+//     int total = 0;
+//     foreach (int price in groceryListPrices)
+//     {
+//       total = total + price;
+//     }
