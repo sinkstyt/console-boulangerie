@@ -22,6 +22,12 @@ namespace BakerySales.Models
       Price = thisPrice;
     }
 
+    public static int AllPastryInstancesCount()
+    {
+      int countOfAllTypes = 0;
+      return countOfAllTypes;
+    }
+
     public static void ClearAll()
     {
       _allPastries.Clear();
