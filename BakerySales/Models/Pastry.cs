@@ -4,17 +4,22 @@ namespace BakerySales.Models
 {
   public class Pastry
   {
-    private string _typePastry { get; }
-    public string NameLoaf { get; set; }
-    public int Price { get; }
+    public string Type { get; set; }
+    public int Count { get; set; }
+    public int Price { get; set; }
     private static List<Pastry> _allPastries = new List<Pastry> { };
     
-    public Pastry(string typeOfPastry, int number)
+    public Pastry(string typeOfPastry, int numberOf)
     {
-      string Type = typeOfPastry;
-      int Count = number;
+      Type = typeOfPastry;
+      Count = numberOf;
       _allPastries.Add(this);
-      int Price = 1;
+    }
+
+    public Pastry(string typeOfPastry, int numberOf, int thisPrice)
+      : this(typeOfPastry, numberOf)
+    {
+      Price = thisPrice;
     }
 
     public static void ClearAll()
