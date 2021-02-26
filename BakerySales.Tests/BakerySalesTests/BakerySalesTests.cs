@@ -20,6 +20,20 @@ namespace BakerySales.Tests
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
 
+    [TestMethod]
+    public void PastryConstructor_InstantiatesPastryInstance_Pastry()
+    {
+      // Arrange
+      string newType = "cinnamon";
+      int countOfType = 1;
+
+      // Act
+      Pastry newPastry = new Pastry(newType, countOfType);
+      
+      // Assert
+      Assert.AreEqual(typeof(Pastry), newPastry.GetType());
+    }
+
     // [TestMethod]
     // public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
     // {

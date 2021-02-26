@@ -1,9 +1,9 @@
-namespace BakerySales
+namespace BakerySales.Models
 {
   public class Bread
   {
-    private string typeLoaf { get; }
-    public string regLoaf { get; set; }
+    public string TypeLoaf { get; set; }
+    public int CountLoaf { get; set; }
     
     public Bread(string type, int num)
     {
