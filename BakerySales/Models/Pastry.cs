@@ -32,6 +32,16 @@ namespace BakerySales.Models
       return countOfAllTypes;
     }
 
+    public static int CalcPricePastries()
+    {
+      int costForAllPastries = 0;
+      // foreach(Pastry desiredNumber in _allPastries)
+      // {
+      //   countOfAllTypes += desiredNumber.Count * desiredNumber.Price;
+      // }
+      return costForAllPastries;
+    }
+
     public static void ClearAll()
     {
       _allPastries.Clear();
