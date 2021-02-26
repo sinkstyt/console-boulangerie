@@ -25,10 +25,10 @@ namespace BakerySales.Models
     public static int AllBreadInstancesCount()
     {
       int countOfAllTypes = 0;
-      // foreach(Bread loaf in _allLoaves)
-      // {
-      //   countOfAllTypes += loaf.Count;
-      // }
+      foreach(Bread loaf in _allLoaves)
+      {
+        countOfAllTypes += loaf.CountLoaf;
+      }
       return countOfAllTypes;
     }
     
