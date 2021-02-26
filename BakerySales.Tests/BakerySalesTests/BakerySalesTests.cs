@@ -81,7 +81,7 @@ namespace BakerySales.Tests
     {
       string newType = "Conversation";
       int countOfType = 3;
-      string secondType = "Cre^pes Suzette,";
+      string secondType = "Cre^pes Suzette";
       int countOfSecond = 4;
       Pastry newPastry = new Pastry(newType, countOfType);
       Pastry oldPastry = new Pastry(secondType, countOfSecond);
@@ -89,8 +89,22 @@ namespace BakerySales.Tests
       int allInstancesPastry = Pastry.AllPastryInstancesCount();
 
       Assert.AreEqual(7, allInstancesPastry);
-
     }
+
+    [TestMethod]
+    public void GetCount_ReturnsCountOfAllBreadInstances_Int()
+    {
+      string newType = "brioche";
+      int countOfType = 12;
+      string secondType = "baguette";
+      int countOfSecond = 2;
+      Bread newBread = new Bread(newType, countOfType);
+      Bread crustyBread = new Bread(secondType, countOfSecond);
+
+      int allInstancesBread = Bread.AllBreadInstancesCount();
+
+      Assert.AreEqual(7, allInstancesBread);
+    }    
 
     // When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
 

@@ -21,6 +21,16 @@ namespace BakerySales.Models
     {
       Price = cost;
     }
+
+    public static int AllBreadInstancesCount()
+    {
+      int countOfAllTypes = 0;
+      // foreach(Bread loaf in _allLoaves)
+      // {
+      //   countOfAllTypes += loaf.Count;
+      // }
+      return countOfAllTypes;
+    }
     
     public static void ClearAll()
     {
