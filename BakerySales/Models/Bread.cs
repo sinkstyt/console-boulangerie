@@ -35,6 +35,10 @@ namespace BakerySales.Models
     public static int CalcPriceBreads()
     {
       int breadCostTotal = 0;
+      foreach(Bread loavesCount in _allLoaves)
+      {
+        breadCostTotal += loavesCount.Price * loavesCount.CountLoaf;
+      }
       return breadCostTotal;
     }
     

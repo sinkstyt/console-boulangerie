@@ -115,7 +115,7 @@ namespace BakerySales.Tests
       string secondType = "baguette";
       int countOfSecond = 32;
       Bread newBread = new Bread(newType, countOfType, loafPrice);
-      Bread tastyBread = new Bread(secondType, countOfSecond);
+      Bread tastyBread = new Bread(secondType, countOfSecond, loafPrice);
 
       int allInstancesBreadCost = Bread.CalcPriceBreads();
 
@@ -124,7 +124,7 @@ namespace BakerySales.Tests
 
     // When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
 
-    // A user should be able to specify how many loaves of Bread and how many Pastrys they'd like.
+    // A user should be able to specify how many loaves of Bread and how many <Pastry>s they'd like.
 
     // The application will return the total cost of the order.
 
