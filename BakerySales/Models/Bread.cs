@@ -31,6 +31,12 @@ namespace BakerySales.Models
       }
       return countOfAllTypes;
     }
+
+    public static int CalcPriceBreads()
+    {
+      int breadCostTotal = 0;
+      return breadCostTotal;
+    }
     
     public static void ClearAll()
     {

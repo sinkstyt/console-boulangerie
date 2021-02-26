@@ -103,8 +103,24 @@ namespace BakerySales.Tests
 
       int allInstancesBread = Bread.AllBreadInstancesCount();
 
-      Assert.AreEqual(7, allInstancesBread);
-    }    
+      Assert.AreEqual(14, allInstancesBread);
+    }
+
+    [TestMethod]
+    public void CalcPriceBreads_ReturnsCostOfAllBreadInstances_Int()
+    {
+      string newType = "boule";
+      int countOfType = 5;
+      int loafPrice = 5;
+      string secondType = "baguette";
+      int countOfSecond = 32;
+      Bread newBread = new Bread(newType, countOfType, loafPrice);
+      Bread tastyBread = new Bread(secondType, countOfSecond);
+
+      int allInstancesBreadCost = Bread.CalcPriceBreads();
+
+      Assert.AreEqual(185, allInstancesBreadCost);
+    }
 
     // When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
 
