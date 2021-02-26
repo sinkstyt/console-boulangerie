@@ -1,6 +1,7 @@
-using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
 using BakerySales.Models;
+using System;
 
 namespace BakerySales.Tests
 {
@@ -13,7 +14,7 @@ namespace BakerySales.Tests
       Bread.ClearAll();
       Pastry.ClearAll();
     }
-  {
+  
     [TestMethod]
     public void BreadConstructor_InstantiatesBreadInstance_Bread()
     {
@@ -32,7 +33,7 @@ namespace BakerySales.Tests
     public void PastryConstructor_InstantiatesPastryInstance_Pastry()
     {
       // Arrange
-      string newType = "cinnamon";
+      string newType = "bichon au citron";
       int countOfType = 1;
 
       // Act
@@ -43,16 +44,18 @@ namespace BakerySales.Tests
     }
 
     [TestMethod]
-    public void GetPastryPrice_GetsPriceOfPastry_Int()
+    public void GetPastryPrice_ReturnsPriceOfPastry_Int()
     {
+      // Arrange
+      Pastry newPastry = new Pastry("bichon au citron", 3);
+      
       // Act
-      testPastryPrice = Pastry._price.Get();
+      int testPastryPrice = newPastry.Price;
       
       // Assert
-      Assert.AreEqual(typeof(Bread), newBread.GetType());
+      Assert.AreEqual(2, testPastryPrice);
     }
 
-    // string newType = "bichon au citron";
     // [TestMethod]
     // public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
     // {
