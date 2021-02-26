@@ -42,15 +42,15 @@ namespace BakerySales.Models
       return costForAllPastries;
     }
 
+    public static int CalcAdjPricePastries(int countForDiscount, int discount)
+    {
+      int adjustedTotal = 0;
+      return adjustedTotal;
+    }
+
     public static void ClearAll()
     {
       _allPastries.Clear();
     }
   }
 }
-
-//     int total = 0;
-//     foreach (int price in groceryListPrices)
-//     {
-//       total = total + price;
-//     }

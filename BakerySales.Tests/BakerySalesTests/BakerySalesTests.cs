@@ -138,24 +138,32 @@ namespace BakerySales.Tests
       Assert.AreEqual(74, allInstancesPastryCost);
     }
 
+    [TestMethod]
+    public void CalcAdjPricePastries_ReturnsCostOfAllPastryInstancesDiscountsApplied_Int()
+    {
+      string crustyCake = "Galette";
+      int countOfType = 5;
+      int crunchyPrice = 2;
+      string creamyTriangle = "Jesuite";
+      int countOfSecond = 32;
+      int discountCountThreshold = 3;
+      int discountReducer = 1;
+      Pastry newTreat = new Pastry(crustyCake, countOfType, crunchyPrice);
+      Pastry yumTreat = new Pastry(creamyTriangle, countOfSecond, crunchyPrice);
+
+      int allInstancesPastryDiscontedTotal = Pastry.CalcAdjPricePastries(discountCountThreshold, discountReducer);
+
+      Assert.AreEqual(62, allInstancesPastryDiscontedTotal);
+    }
+
     // When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
 
     // A user should be able to specify how many loaves of Bread and how many <Pastry>s they'd like.
 
     // The application will return the total cost of the order.
 
-    // Pierre offers the following deals:
-
     // Bread: Buy 2, get 1 free. A single loaf costs $5.
     // Pastry: Buy 1 for \$2 or 3 for $5.
     // All functionality for the models should be tested.
-
-    // [TestMethod]
-    // public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
-    // {
-        // any necessary logic to prep for test; instantiating new 
-            // classes, etc.
-    //   Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
-    // }
   }
 }
