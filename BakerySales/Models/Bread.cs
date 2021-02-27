@@ -49,11 +49,11 @@ namespace BakerySales.Models
       int totalBreadNum = Bread.AllBreadInstancesCount();
       if (totalBreadNum >= 2)
       {
-        // decimal loafBonusCount = Math.Floor(Convert.ToDecimal(totalBreadNum / countPerDiscount));
-        // Console.WriteLine("loafBonusCount value is {0}", loafBonusCount);
-        // int bonus = Convert.ToInt32(loafBonusCount);
-        // Console.WriteLine("bonus [loaves] int currently holds: {0}", bonus);
-        // totalBreadNum += Convert.ToInt32(bonus);
+        decimal loafBonusCount = Math.Floor(Convert.ToDecimal(totalBreadNum / countPerDiscount));
+        Console.WriteLine("loafBonusCount value is {0}", loafBonusCount);
+        int bonus = Convert.ToInt32(loafBonusCount);
+        Console.WriteLine("bonus [loaves] int currently holds: {0}", bonus);
+        totalBreadNum += Convert.ToInt32(bonus);
         return totalBreadNum;
       }
       else
