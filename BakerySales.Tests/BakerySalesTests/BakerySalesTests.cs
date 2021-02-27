@@ -91,7 +91,7 @@ namespace BakerySales.Tests
     }
 
     [TestMethod]
-    public void GetCount_ReturnsCountOfAllBreadInstances_Int()
+    public void AllBreadInstancesCount_ReturnsCountOfAllBreadInstances_Int()
     {
       string newType = "brioche";
       int countOfType = 12;
@@ -154,6 +154,25 @@ namespace BakerySales.Tests
       int allInstancesPastryDiscontedTotal = Pastry.CalcAdjPricePastries(discountCountThreshold, discountReducer);
 
       Assert.AreEqual(62, allInstancesPastryDiscontedTotal);
+    }
+
+    [TestMethod]
+    public void CalcAdjNumBreads_ReturnsBreadCountWithBonusApplied_Int()
+    {
+      string loafOne = "boule";
+      int countOfType = 4;
+      int boulePrice = 5;
+      string eggyLoaf = "brioche";
+      int countOfSecond = 36;
+      int discountCountThreshold = 2;
+      int freeLoafPerPair = 1;
+      int undiscountedLoafCount = Bread.AllBreadInstancesCount();
+      Bread newBread = new Bread(loafOne, countOfType, boulePrice);
+      Bread anotherBread = new Bread(eggyLoaf, countOfSecond, boulePrice);
+
+      int newTotalLoafCount = Bread.CalcAdjNumBreads(discountCountThreshold, freeLoafPerPair);
+
+      Assert.AreEqual(60, newTotalLoafCount);
     }
 
     // When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
