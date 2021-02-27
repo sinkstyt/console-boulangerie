@@ -31,47 +31,38 @@ namespace BakerySales.Tests
     [TestMethod]
     public void PastryConstructor_InstantiatesPastryInstance_Pastry()
     {
-      // Arrange
       string newType = "bichon au citron";
       int countOfType = 1;
       int newPrice = 5;
 
-      // Act
       Pastry newPastry = new Pastry(newType, countOfType, newPrice);
       
-      // Assert
       Assert.AreEqual(typeof(Pastry), newPastry.GetType());
     }
 
     [TestMethod]
     public void GetPastryPrice_ReturnsPriceOfPastry_Int()
     {
-      // Arrange
       string newType = "Charlotte";
       int countOfType = 1;
       int newPrice = 5;
       Pastry newPastry = new Pastry(newType, countOfType, newPrice);
-      
-      // Act
+
       int testPastryPrice = newPastry.Price;
 
-      // Assert
       Assert.AreEqual(5, testPastryPrice);
     }
 
     [TestMethod]
     public void GetBreadPrice_ReturnsPriceOfBread_Int()
     {
-      // Arrange
       string newType = "boule";
       int countOfType = 1;
       int newPrice = 7;
       Bread newBread = new Bread(newType, countOfType, newPrice);
       
-      // Act
       int testBreadPrice = newBread.Price;
 
-      // Assert
       Assert.AreEqual(7, testBreadPrice);
     }
 
@@ -174,15 +165,5 @@ namespace BakerySales.Tests
 
       Assert.AreEqual(60, newTotalLoafCount);
     }
-
-    // When the user runs the application, they should receive a prompt with a welcome message along with the cost for both Bread and Pastry.
-
-    // A user should be able to specify how many loaves of Bread and how many <Pastry>s they'd like.
-
-    // The application will return the total cost of the order.
-
-    // Bread: Buy 2, get 1 free. A single loaf costs $5.
-    // Pastry: Buy 1 for \$2 or 3 for $5.
-    // All functionality for the models should be tested.
   }
 }
